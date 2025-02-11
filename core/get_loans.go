@@ -1,5 +1,6 @@
 package core
 
+// ClientRequest representa as informações que serão recebidas na requisição
 type ClientRequest struct {
 	Age 		uint64		`json:"age"`
 	CPF 		string		`json:"cpf"`
@@ -8,17 +9,21 @@ type ClientRequest struct {
 	Location 	string		`json:"location"`
 }
 
+// Loan representa as informações que serão retornadas como resposta
 type Loan struct {
 	Type 			string 	`json:"costumer"`
 	InterestRate 	int 	`json:"interest_rate"`
 }
 
+// LoanService define um serviço para obtenção de empréstimos
 type LoanService interface {
 	GetLoans(client ClientRequest) []Loan
 }
 
+// LoanServiceImpl implementa interface LoanService
 type LoanServiceImpl struct {}
 
+// GetLoans implementa a lógica necessária para definir os empréstimos do usuário
 func (s *LoanServiceImpl) GetLoans(client ClientRequest) []Loan {
 	var loans []Loan
 

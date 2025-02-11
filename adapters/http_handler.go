@@ -8,10 +8,12 @@ import (
 	"loans/ports"
 )
 
+// HTTPHandler é um handler HTTP que processa requisições relacionadas a empréstimos
 type HTTPHandler struct {
 	LoanService ports.LoanService
 }
 
+// CostumerLoans lida com a requisição do usuário
 func (h *HTTPHandler) CostumerLoans(rw http.ResponseWriter, r* http.Request) {
 	if r.Method != http.MethodPost {
 		rw.WriteHeader(http.StatusMethodNotAllowed)

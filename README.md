@@ -17,3 +17,26 @@ Implementar um serviço que determine quais modalidades de empréstimo uma pesso
 - Conceder o empréstimo consignado se o salário do cliente for igual ou superior a R$ 5000.
 - Conceder o empréstimo com garantia se o salário do cliente for igual ou inferior a R$ 3000.
 - Conceder o empréstimo com garantia se o salário do cliente estiver entre R$ 3000 e R$ 5000, se o cliente tiver menos de 30 anos e residir em São Paulo (SP).
+
+## Request
+```json
+{
+    "age": 26,
+    "cpf": "275.484.389-23",
+    "name": "Vuxaywua Zukiagou",
+    "income": 5000.00,
+    "location": "SP"
+}
+```
+
+## Response
+- `200 Ok`: deve retornar os empréstimos que o usuário tem acesso.
+
+### Ok
+<img src="images/status-ok.png">
+
+## Teconologias utilizadas
+- Golang
+
+## Ferramenta para realizar as requisições
+- Postman
